@@ -1,0 +1,43 @@
+---
+title: "ch20"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(purrr)
+```
+
+# Vectors
+
+##20.3.5
+1. the difference between is.finite(x) and !is.finite(x) is that the ! means not therefore the second one is saying is not and will exclude those things.
+2. this allows numerical tollerance when working with floating point numbers
+```{r}
+dplyr::near
+```
+3.An integer vector can take 232 values. A double vector can take 3 values. 
+4. one possible way of converting a double to an integer is by putting a L after the number. Another way is with the type.convert code. A third way is with the as.integer code. 
+5. parse_logical, parse_integer, parse_double
+
+## 20.4.6
+1. mean(is.na(x)) tells you what proportion is "not available". sum(!is.finite(x)) tells you how many are not finite
+2. is.vector gives a true if x is a vector of the specified mode having no attributes other than names. It will be true for list and expression as well.
+3. both will set name to an object but setNames has more features and is stricter
+4. 1.[[]] because it is asking for a specific value 2. even_num  3.except_last
+5. which will ignore NAs
+6. both will give an NA
+
+## 20.5.4
+2. a tibble subset will return a tibble and a list subset will return a vector
+## 20.7.4
+1.it prints in hours
+```{r}
+hms::hms(3600)
+```
+2.the length must be the same or else you will get an error
+3. yes as long as the columns are the same length.
